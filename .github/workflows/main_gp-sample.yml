@@ -25,6 +25,7 @@ jobs:
         run: |
           npm install
           npm run build
+        working-directory: .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -52,4 +53,4 @@ jobs:
           app-name: 'gp-sample'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F99761A1C89C419FA60D45BD137E9BC2 }}
-          package: .
+          package: ./dist/vffront-end
