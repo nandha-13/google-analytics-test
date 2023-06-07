@@ -29,8 +29,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: src
-          path: dist/vff-frontend
+          name: google-analytics-test
+          path: dist/vffront-end
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: google-analytics-test
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
